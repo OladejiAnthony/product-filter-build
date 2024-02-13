@@ -52,21 +52,28 @@ const ProductList = () => {
           <div className="--flex-between --flex-dir-column --py">
             {/* <p className="--color-white">input</p> */}
             <Search onInputChange={handleSearch} inputValue={search} />
-            <Categories categories={categories} filterItems={filterProduct} />
+            <Categories filterProduct={filterProduct} categories={categories} />
           </div>
         </header>
       </div>
       <div className="product-container">
         <div className="container products --grid-25 --py2">
-          {filteredProducts.length === 0 ? (
-            <h3>No product found!!!</h3>
-          ) : (
-            filteredProducts.map((product) => {
-              const { id, title, img, price } = product;
-              return (
-                <div key={id}>
-                  <Product title={title} img={img} price={price} />;
-                </div>
+          {filteredProducts.length === 0 
+            ? (
+                <h3>No product found!!!</h3>
+              ) 
+            : (
+                filteredProducts.map((product) => {
+                  const { id, title, img, price } = product;
+                  return (
+                    <div key={id}>
+                    {}
+                      <Product 
+                        title={title} 
+                        img={img} 
+                        price={price} 
+                      />
+                    </div>
               );
             })
           )}
@@ -77,3 +84,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+

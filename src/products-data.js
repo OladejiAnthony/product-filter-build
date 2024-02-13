@@ -83,4 +83,5 @@ export const products = [
     price: 35.99,
     img: "/images/4.png",
   },
+  
 ];
